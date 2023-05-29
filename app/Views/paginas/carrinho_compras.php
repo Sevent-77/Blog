@@ -1,1 +1,0 @@
-<h1><?= $dados['descricao'] ?></h1>
