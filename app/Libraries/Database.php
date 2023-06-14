@@ -14,7 +14,7 @@ class Database{
         $dsn = 'mysql:host='.$this->host.';port='.$this->porta.';dbname='.$this->banco;
         $opcoes = [
             PDO::ATTR_PERSISTENT => TRUE,
-            PDO:: ATTE_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ];
         try {
             $this->dbh = new PDO($dsn, $this->$usuario, $this->$senha, $opcoes);
