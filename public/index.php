@@ -3,6 +3,23 @@ include './../app/configuracao.php';
 include './../app/Libraries/Rota.php';
 include './../app/Libraries/Controller.php';
 include './../app/Libraries/Database.php';
+$db = new Database;
+
+$usuarioId = 10;
+$titulo = "Titulo do post";
+$texto = "Texto do post";
+
+$db->query("INSERT INTO posts(usuario_id, titulo, texto) values (:usuario_id, :titulo, :texto)");
+
+$db->bind(":usuario_id", $usuarioId);
+$db->bind(":titulo", $titulo);
+$db->bind(":texto", $texto);
+
+$db->executa();
+
+echo '<br>Total Resultados: '.$db->totalResultados();
+echo '<br>Útimo id: '.$db->ultimoIdInserido();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

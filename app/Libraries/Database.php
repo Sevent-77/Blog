@@ -14,10 +14,10 @@ class Database{
         $dsn = 'mysql:host='.$this->host.';port='.$this->porta.';dbname='.$this->banco;
         $opcoes = [
             PDO::ATTR_PERSISTENT => TRUE,
-            PDO:: ATTE_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO:: ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ];
         try {
-            $this->dbh = new PDO($dsn, $this->$usuario, $this->$senha, $opcoes);
+            $this->dbh = new PDO($dsn, $this->usuario, $this->senha, $opcoes);
             $dbh = null;
         } catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
@@ -63,7 +63,7 @@ class Database{
         return $this->stmt->rowCount();
     }
     public function ultimoIdInserido(){
-        return $this->stmt->lastInsertID();
+        return $this->dbh->lastInsertId();
     }
 }
 
