@@ -11,6 +11,7 @@ class Paginas extends Controller{
           $dados = ['titulo'=>'Página Sobre',
           'descricao'=>'Aqui você encontra o melhor conteúdo...'
           ];
+          var_dump($dados);
           $this->view('paginas/sobre', $dados);
      }// fim do método sobre
 }//fim da classe

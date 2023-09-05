@@ -22,7 +22,7 @@ class Rota{
 
     $this->parametros = $url ? array_values($url) : [];
     call_user_func_array([$this->controlador, $this->metodo], $this->parametros);
-      // var_dump($this);
+      var_dump($this);
     }
 
      // retorna a url em um array
